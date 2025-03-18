@@ -1,62 +1,65 @@
-﻿using System;
+using System;
 
 class Program
 {
 
     static void Main()
     {
-        const int linha = 3, coluna = 5;
-        int[,] numero = new int[5, 3];
-        int soma = 0;
-        int i, j;
+
+        int[,] numero = new int[3, 5];
 
 
-        for (i = 0; i < 5; i++)
+
+        for (int i = 0; i < 3; i++)
         {
-            for (j = 0; j < 3; j++)
+            for (int j = 0; j < 5; j++)
             {
-                telaInicial();
-                Console.SetCursorPosition(9, 3);
+                telaInicial(i, j);
+                Console.SetCursorPosition(30, 3);
                 numero[i, j] = int.Parse(Console.ReadLine());
             }
         }
 
 
+        Console.Clear();
 
-        for (i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (j = 0; j < 3; j++)
+            int soma = 0;
+            for (int j = 0; j < 5; j++)
             {
+
                 soma = soma + numero[i, j];
+
             }
-            Console.Clear();
             Console.WriteLine($"A soma da linha {i + 1} é {soma}");
-
         }
-    } 
 
-    private static void telaInicial()
+
+    }
+
+    private static void telaInicial(int i, int j)
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════╗");
-        Console.WriteLine("║        Vetor de Números        ║");
-        Console.WriteLine("╠════════════════════════════════╣");
-        Console.WriteLine("║ Número:                        ║");
-        Console.WriteLine("╚════════════════════════════════╝");
+        Console.WriteLine("╔═════════════════════════════════════════════════╗");
+        Console.WriteLine("║             Vetor de Números                    ║");
+        Console.WriteLine("╠═════════════════════════════════════════════════╣");
+        Console.WriteLine($"║ Número da linha  {i + 1} coluna {j + 1}:                    ║");
+        Console.WriteLine("╚═════════════════════════════════════════════════╝");
     }
 
     private static void telaNumero()
     {
         Console.Clear();
-        Console.WriteLine("╔══════════════════════════════════════════════╗");
-        Console.WriteLine("║                  Números              ║ Soma ║");
-        Console.WriteLine("╠═══════╦═══════╦═══════╦═══════╦═══════╣══════╣");
-        Console.WriteLine("║       ║       ║       ║       ║       ║      ║");
-        Console.WriteLine("╠═══════╬═══════╬═══════╬═══════╬═══════╣══════╣");
-        Console.WriteLine("║       ║       ║       ║       ║       ║      ║");
-        Console.WriteLine("╠═══════╬═══════╬═══════╬═══════╬═══════╣══════╣");
-        Console.WriteLine("║       ║       ║       ║       ║       ║      ║");
-        Console.WriteLine("╚═══════╩═══════╩═══════╩═══════╩═══════╝══════╝");
+        Console.WriteLine("╔═══════════════════════════════════════╗");
+        Console.WriteLine("║                  Números              ║");
+        Console.WriteLine("╠═══════╦═══════╦═══════╦═══════╦═══════╣");
+        Console.WriteLine("║       ║       ║       ║       ║       ║");
+        Console.WriteLine("╠═══════╬═══════╬═══════╬═══════╬═══════╣");
+        Console.WriteLine("║       ║       ║       ║       ║       ║");
+        Console.WriteLine("╠═══════╬═══════╬═══════╬═══════╬═══════╣");
+        Console.WriteLine("║       ║       ║       ║       ║       ║");
+        Console.WriteLine("╚═══════╩═══════╩═══════╩═══════╩═══════╝");
     }
 
 }
