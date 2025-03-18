@@ -6,7 +6,7 @@ double[] soma = new double[10];
 
 double[] media = new double[10];
 
-for ( int i = 0; i < 10; i++)
+for ( int i = 0; i < vetor.Length; i++)
 {
     Console.WriteLine("Digite o nome do aluno e sua nota: ");
     vetor[i] = Console.ReadLine();
